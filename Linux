@@ -1,0 +1,2 @@
+To force the use of SHA1 kex
+"ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 user@legacyhost"
