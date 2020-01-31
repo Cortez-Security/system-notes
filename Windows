@@ -1,0 +1,4 @@
+To UNC with IPv6
+Replace ":" with "-" and append ".ipv6-literal.net"
+
+
