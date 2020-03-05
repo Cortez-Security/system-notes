@@ -1,4 +1,6 @@
 To UNC with IPv6
 Replace ":" with "-" and append ".ipv6-literal.net"
 
+To invoke command
+"Invoke-Command -ComputerName hostname -ScriptBlock { Get-WindowsFeature }"
 
