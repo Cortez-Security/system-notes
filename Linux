@@ -1,2 +1,8 @@
 To force the use of SHA1 kex
 "ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 user@legacyhost"
+
+To search accross all files in current directory
+"grep -ir "SearchString"
+
+To search full filesystem for a file
+"find / -name "filename""
