@@ -1,7 +1,7 @@
-**To UNC with IPv6**
+#To UNC with IPv6**
 Replace ":" with "-" and append ".ipv6-literal.net"
 
-**To invoke command**
+#To execute a command remotely
 Invoke-Command -ComputerName hostname -ScriptBlock { Get-WindowsFeature }
 
 -------------------------------------------------------------
@@ -11,3 +11,9 @@ $ports = 21, 22, 23, 25, 53, 80, 110, 111, 135, 139, 143, 443, 445, 993, 995, 17
 
 #Executes a tcp connect for each port in the variable against a given hostname or IP and formats the output
 foreach ($port in $ports) {Test-NetConnection [insert_hostname_or_IP] -Port $port -WarningAction SilentlyContinue | Select-Object ComputerName, RemoteAddress, RemotePort, TcpTestSucceeded}
+-------------------------------------------------------------
+
+#Generate a hash for all files, including subdirectories (recursively)
+ls -r | Get-FileHash
+#To make it MD5
+ls -r | Get-FileHash -Algorithm MD5
