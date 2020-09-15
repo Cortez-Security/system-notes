@@ -17,3 +17,18 @@ foreach ($port in $ports) {Test-NetConnection [insert_hostname_or_IP] -Port $por
 ls -r | Get-FileHash
 #To make it MD5
 ls -r | Get-FileHash -Algorithm MD5
+---------------------------------------
+
+#To be able to install/uninstall while in safe mode
+REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\MSIServer" /VE /T REG_SZ /F /D "Service"
+REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\MSIServer" /VE /T REG_SZ /F /D "Service"
+net start msiserver
+-------------------------------
+
+#Common ransomware commands
+wevtutil cl security
+wevtutil cl system
+wevtutil cl application
+wmic shadowcopy delete
+wbadmin delete systemstatebackup
+vssadmin delete shadows
